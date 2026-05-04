@@ -1,0 +1,101 @@
+Estrutura Repetida:
+- Header
+    + Marca da Empresa
+- Footer
+    + Direitos
+- Navbar
+    + Contendo as abas de <- Estilizada em baixo estilo rounded
+        #Home
+        #Dashboard
+        #Home
+
+Páginas
+- Home
+    ||~ Conjunto das outras páginas ~||
+    + Base de Dados
+        # Estruturação de últimas tabelas feitas
+        # Linkagem para a página de controle de dados
+    + Dashboard
+- Base de Dados
+    {V2}+ Duas views em colunas (switch para trocar visualização)
+            # Databases fixas (não se modificam mês a mês)
+            # Databases mensais (Se auto modificam a cada Mẽs)
+                + Separadora pela data
+                    -- Formato Calendário hierarquico estilo Lista
+                    -- Mês a mês
+                    <- Semanas
+                    <- personalizado
+
+                    ~~Estrutura Final ~~
+
+                    Janeiro
+                    -
+                    Semana 1
+                    -
+                    Dia 3
+                    -
+                    Dia 5
+                    -
+                    Semana 2
+                    -
+                    Fevereiro
+                    ...
+
+    + Lista com as base de dados
+        # Poder Adicionar uma categoria
+        # Poder Adicionar uma base de dados a uma categoria
+            + Adicionar Nome
+    + Tabela Simples
+        # Permitir adicionar valores ao campo de texto Simples
+        # Permitir criar novas colunas de texto
+        # Permitir modificar o tipo da coluna
+            ||~ Tipos ~||
+            + texto
+            + Número
+            + Valor (real, dólar)
+            + Boolean
+            + Opção
+            + Data
+
+    + Configurações de Tabela
+
+    + Tabela Avançada
+        # Permitir Fórmulas
+            + Utilizar de um índice da tabela e usar com outro índice
+            + Possibilitar uma fórmula para múltiplas linhas ou uma somente
+                # Tela de seleção de índices
+        # Possibilitar a criação de database customizada para cada mês
+            + Botão de Opção
+                # Opção de tabela fixa
+                # Opção de tabela variada para mês 
+        # Criação de Tabela Variada
+            + Tabela que se modifica por mensalmente (apartir de uma data especificada)
+            + Tabela que se modifica semanalmente (apartir de uma data específica)
+            + Tabela que se modifica apartir de um período personalizado especificado
+            + Modificação de dados
+                ||~ Criação de Indices ~||
+                    # Mesmo sistema de índices e tipos de valores
+                    # Fórmula aplicável de acordo com o período definido na tabela
+                        -- Incrementação
+                        -- Decrementação
+                        -- Operações aritméticas em formato final
+        
+
+- Dashboard
+    ||~ Views para as bases de dados ~||
+    + Views em Calendário
+        -- Estruturação em Bloco
+        # Mostrar data atual mensal
+        # Mostrar Data de meses seguintes por seta
+        
+    + Views em Cronograma
+    + Views em metodologia Scrum
+    + Views em metodologia Kanban
+
+- To Do
+    ||~ Lista To Do ~||
+
+
+--~ Situações problemas encontrados ~--
+- Valor Parcela variádo a mês
+    + Fórmula aplicável a campo de data (múltipla data)
