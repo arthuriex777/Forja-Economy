@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bases de Dados</title>
+    <script src="../components.js"></script>
+    <script src="../Pages/Tabela/tableComps.js"></script>
+    <link rel="stylesheet" href="../Style/essentials.css">
+    <link rel="stylesheet" href="../Style/baseDados.css">
+</head>
+<body>
+    <hea-der></hea-der>
+
+    <div class="switch-base">
+        <button>
+            <div>
+                <p>N</p>
+            </div>
+            <span class="modulo-switch"></span>
+            <div>
+                <p>P</p>
+            </div>
+        </button>
+    </div>
+
+    <div class="criarTabela">
+        <button>Criar Tabela Nova</button>
+    </div>
+
+    <main>
+        <!-- <h1 class="text">MES 1</h1> -->
+        <tabela-cus class="tabelas" colunas="4" linhas="4"></tabela-cus>
+        <!-- <h1 class="text">Semana 04-08</h1>
+        <h1 class="text">MES 2</h1>
+        <h1 class="text">MES 3</h1>
+        <h1 class="text">Semana 11-15</h1>
+        <h1 class="text">MES 4</h1> -->
+    </main>
+
+    <div class="tabelaNova">
+        <h1>Digite o Nome da Tabela</h1>
+        <input type="text">
+
+        <h2>Número de linhas</h2>
+        <input type="number" placeholder="1" value="1">
+        <h2>Número de Colunas</h2>
+        <input type="number" placeholder="3" value="3">
+    </div>
+    
+    <nav-bar></nav-bar>
+</body>
+</html>
