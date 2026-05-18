@@ -1,53 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bases de Dados</title>
-    <script src="../components.js"></script>
-    <script src="../Pages/Tabela/tableComps.js"></script>
-    <link rel="stylesheet" href="../Style/essentials.css">
-    <link rel="stylesheet" href="../Style/baseDados.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bases de Dados</title>
+  <script src="../components.js"></script>
+  <script src="../Pages/Tabela/tableComps.js"></script>
+  <link rel="stylesheet" href="../Style/essentials.css">
+  <link rel="stylesheet" href="../Style/baseDados/baseDados.css">
+  <link rel="stylesheet" href="../Style/baseDados/tabela.css">
+  <script src="../scripts/tabelaBaseDados.js"></script>
 </head>
+
 <body>
-    <hea-der></hea-der>
+  <hea-der></hea-der>
 
-    <div class="switch-base">
-        <button>
-            <div>
-                <p>N</p>
-            </div>
-            <span class="modulo-switch"></span>
-            <div>
-                <p>P</p>
-            </div>
-        </button>
+  <div class="switch-base">
+    <button>
+      <div>
+        <p>N</p>
+      </div>
+
+      <span class="modulo-switch"></span>
+
+      <div>
+        <p>P</p>
+      </div>
+    </button>
+  </div>
+
+  <div class="criarTabela">
+    <button>Criar Tabela Nova</button>
+  </div>
+
+  <main>
+    <!-- <h1 class="text">MES 1</h1> -->
+    <tabela-cus class="tabelas" colunas="4" linhas="4"></tabela-cus>
+    <!-- <h1 class="text">Semana 04-08</h1>
+    <h1 class="text">MES 2</h1>
+    <h1 class="text">MES 3</h1>
+    <h1 class="text">Semana 11-15</h1>
+    <h1 class="text">MES 4</h1> -->
+  </main>
+
+  <div class="container-tabela">
+    <div class="cabecalho-tabela">
+      <h2 class="titulo-tabela" contenteditable="true">Nome da Tabela</h2>
+      <button class="btn-adicionar" id="btn-add-coluna" onclick="addColuna()">+ Adicionar Coluna</button>
     </div>
 
-    <div class="criarTabela">
-        <button>Criar Tabela Nova</button>
+    <div class="scroll-tabela">
+      <table class="tabela-excel" id="minha-tabela">
+        <thead>
+          <tr>
+            <th class="celula-indice"></th>
+            <th data-type="texto" class="th-interativo">
+              <div class="th-content">
+                <span class="th-icon">Aa</span>
+                <span class="th-name">Coluna 1</span>
+              </div>
+            </th>
+            <th data-type="texto" class="th-interativo">
+              <div class="th-content">
+                <span class="th-icon">Aa</span>
+                <span class="th-name">Coluna 2</span>
+              </div>
+            </th>
+            <th data-type="texto" class="th-interativo">
+              <div class="th-content">
+                <span class="th-icon">Aa</span>
+                <span class="th-name">Coluna 3</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="celula-indice">1</td>
+            <td contenteditable="true" class="celula-dado"></td>
+            <td contenteditable="true" class="celula-dado"></td>
+            <td contenteditable="true" class="celula-dado"></td>
+          </tr>
+          <tr>
+            <td class="celula-indice">2</td>
+            <td contenteditable="true" class="celula-dado"></td>
+            <td contenteditable="true" class="celula-dado"></td>
+            <td contenteditable="true" class="celula-dado"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <main>
-        <!-- <h1 class="text">MES 1</h1> -->
-        <tabela-cus class="tabelas" colunas="4" linhas="4"></tabela-cus>
-        <!-- <h1 class="text">Semana 04-08</h1>
-        <h1 class="text">MES 2</h1>
-        <h1 class="text">MES 3</h1>
-        <h1 class="text">Semana 11-15</h1>
-        <h1 class="text">MES 4</h1> -->
-    </main>
-
-    <div class="tabelaNova">
-        <h1>Digite o Nome da Tabela</h1>
-        <input type="text">
-
-        <h2>Número de linhas</h2>
-        <input type="number" placeholder="1" value="1">
-        <h2>Número de Colunas</h2>
-        <input type="number" placeholder="3" value="3">
+    <div class="footer-tabela">
+      <button class="btn-criar">Criar Tabela</button>
     </div>
-    
-    <nav-bar></nav-bar>
+
+    <div id="menu-coluna" class="menu-flutuante oculto">
+      <div class="menu-group">
+        <label for="input-nome-coluna">Nome da Propriedade</label>
+        <input type="text" id="input-nome-coluna" placeholder="Ex: Status">
+      </div>
+      <div class="menu-group">
+        <label for="select-tipo-coluna">Tipo de Dado</label>
+        <select id="select-tipo-coluna">
+          <option value="texto">Aa Texto</option>
+          <option value="numero"># Número</option>
+          <option value="boolean">☑ Boolean</option>
+          <option value="escolha">≡ Múltipla Escolha</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <nav-bar></nav-bar>
 </body>
+
 </html>

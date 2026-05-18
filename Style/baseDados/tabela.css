@@ -1,0 +1,241 @@
+/* Container principal da tabela */
+.container-tabela {
+	position: absolute;
+	bottom: 50%;
+	transform: translateY(50%);
+	justify-self: center;
+	background-color: #0b1120; /* Fundo azul bem escuro */
+	border: 1px solid #1e293b; /* Borda sutil */
+	border-radius: 8px;
+	padding: 20px;
+	width: 100%;
+	max-width: 900px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #f8fafc;
+}
+
+/* Header superior (Título e botão) */
+.cabecalho-tabela {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.titulo-tabela {
+	margin: 0;
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #38bdf8; /* Azul claro para contraste */
+}
+
+.btn-adicionar {
+	background-color: transparent;
+	color: #38bdf8;
+	border: 1px solid #38bdf8;
+	padding: 6px 12px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 0.9rem;
+	transition: all 0.2s;
+}
+
+.btn-adicionar:hover {
+	background-color: #38bdf8;
+	color: #0b1120;
+}
+
+/* Área de scroll para manter o layout não importando o tamanho */
+.scroll-tabela {
+	overflow-x: auto;
+	border-radius: 6px;
+	border: 1px solid #1e293b;
+}
+
+/* Estrutura principal da tabela */
+.tabela-excel {
+	width: 100%;
+	border-collapse: collapse; /* Essencial para juntar as bordas estilo planilha */
+	text-align: left;
+	background-color: #0f172a;
+}
+
+/* Estilo dos cabeçalhos (th) e células (td) */
+.tabela-excel th,
+.tabela-excel td {
+	border: 1px solid #1e293b; /* Grade da tabela */
+	padding: 10px 12px;
+	font-size: 0.95rem;
+	min-width: 120px; /* Largura mínima para as colunas não esmagarem */
+}
+
+/* Cabeçalho específico */
+.tabela-excel th {
+	background-color: #1e293b;
+	color: #94a3b8;
+	font-weight: 500;
+	outline: none;
+}
+
+/* Células de dados vazias/preenchidas */
+.celula-dado {
+	color: #cbd5e1;
+	outline: none;
+	transition: background-color 0.1s;
+}
+
+/* Efeito ao focar na célula (clicar para digitar) */
+.celula-dado:focus, .tabela-excel th:focus {
+	background-color: #1e293b;
+	box-shadow: inset 0 0 0 2px #38bdf8; /* Borda interna azul brilhante imitando o Excel */
+}
+
+/* Célula de índice (números das linhas estilo Excel) */
+.celula-indice {
+	background-color: #1e293b;
+	color: #64748b;
+	text-align: center;
+	width: 20px;
+	min-width: 20px;
+	user-select: none;
+	font-weight: bold;
+}
+
+/* Efeito hover na linha inteira para facilitar leitura */
+.tabela-excel tbody tr:hover {
+	background-color: #162032;
+}
+
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+
+.titulo-tabela {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #38bdf8;
+    outline: none; /* Remove a borda azul padrão ao clicar */
+    transition: text-decoration 0.2s ease;
+    cursor: text;
+}
+
+.titulo-tabela:hover {
+    text-decoration: underline;
+}
+
+/* Estilos do Footer e do Botão de Criar */
+.footer-tabela {
+    display: flex;
+    justify-content: center; /* Alinha o botão à direita */
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #1e293b; /* Linha sutil separando do corpo */
+}
+
+.btn-criar {
+    background-color: #38bdf8;
+    color: #0b1120;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-criar:hover {
+    background-color: #0ea5e9; /* Azul levemente mais escuro no hover */
+}
+
+.btn-criar:active {
+    transform: scale(0.98); /* Efeito de clique */
+}
+
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+
+.th-interativo {
+    cursor: pointer;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.th-interativo:hover {
+    background-color: #27374D; /* Um azul um pouco mais claro no hover */
+}
+
+.th-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.th-icon {
+    color: #38bdf8;
+    font-size: 0.85rem;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+/* --- MENU FLUTUANTE DE CONFIGURAÇÃO DE COLUNA --- */
+.menu-flutuante {
+    position: absolute;
+    background-color: #0f172a;
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
+    padding: 16px;
+    width: 220px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+.menu-flutuante.oculto {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.menu-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.menu-group:last-child {
+    margin-bottom: 0;
+}
+
+.menu-group label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.menu-group input, 
+.menu-group select {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    color: #f8fafc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.menu-group input:focus, 
+.menu-group select:focus {
+    border-color: #38bdf8;
+}
